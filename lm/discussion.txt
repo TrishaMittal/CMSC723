@@ -1,0 +1,85 @@
+Trisha Mittal
+
+To analyse the low perplexity scores sentences, I ran the models trained on brown corpus on the treebank test corpus. 
+I have picked out the lowest perplexity scores sentences (lowest 8 -10 sentences) for each of the 5 methods. Below that, I list down some of the common observations. 
+
+==================================
+LAPLACE
+==================================
+('iras .', 20.016968139784517)
+("the '82 salon is $ 115 *u* .", 65.2139002981038)
+('they mature 1992-1999 , 2009 and 2017 .', 116.37161057059136)
+('they mature in 2005 , 2009 and 2029 .', 117.60178938063493)
+('i believe in the system .', 125.9271754927518)
+('that was the law .', 132.04887657814334)
+('marie-louise , a small-time abortionist , was their woman .', 139.26021875343127)
+('he is his own man .', 161.08017379145866)
+('a lorillard spokewoman said , `` this is an old story .', 179.8924723283774)
+('`` not really .', 209.2527000933502)
+===================================
+MLE
+===================================
+('iras .', 11.521461141877412)
+('i believe in the system .', 20.589676319527964)
+("the '82 salon is $ 115 *u* .", 22.642688564822016)
+('that was the law .', 33.80657346543711)
+('he is his own man .', 33.867321106173165)
+("`` it does n't make any difference now .", 35.29647391428263)
+('a lorillard spokewoman said , `` this is an old story .', 35.844184906678954)
+('mr. baris is a lawyer in new york .', 36.77197543639947)
+('we have made no such statement .', 40.70081711001849)
+('and it was stupid .', 41.07915364974653)
+====================================
+DIRICHLET
+====================================
+('iras .', 12.407084593069069)
+("the '82 salon is $ 115 *u* .", 30.175165756385933)
+('i believe in the system .', 43.946888984509464)
+('that was the law .', 54.82593352769716)
+('he is his own man .', 55.164681324050484)
+('a lorillard spokewoman said , `` this is an old story .', 62.42977828646798)
+('they mature in 2005 , 2009 and 2029 .', 68.41576697484284)
+('they mature 1992-1999 , 2009 and 2017 .', 68.8737805885712)
+('not this year .', 70.19952486320584)
+('marie-louise , a small-time abortionist , was their woman .', 75.5752922141273)
+======================================
+JELINEK MERCER
+======================================
+('iras .', 1.4187657885425315)
+('@', 1.947968298571648)
+('hiroshi asada', 2.262301463890701)
+('fundamentalists jihad', 2.262301463890701)
+("the '82 salon is $ 115 *u* .", 3.1850623474337487)
+('marie-louise , a small-time abortionist , was their woman .', 3.942969546250632)
+('that was the law .', 4.292094741362489)
+('they mature in 2005 , 2009 and 2029 .', 4.658932237632476)
+("there was n't *?* . ''", 4.875131752427659)
+('they mature 1992-1999 , 2009 and 2017 .', 4.881740903085673)
+=======================================
+KNESER-NEY
+=======================================
+('iras .', 1.4187657885425315)
+('@', 1.947968298571648)
+('hiroshi asada', 2.262301463890701)
+('fundamentalists jihad', 2.262301463890701)
+('marie-louise , a small-time abortionist , was their woman .', 75.5752922141273)
+("there was n't *?* . ''", 4.875131752427659)
+("the '82 salon is $ 115 *u* .", 30.175165756385933)
+('they mature 1992-1999 , 2009 and 2017 .', 4.881740903085673)
+
+========================================================================
+SOME COMMON OBSERVATIONS
+========================================================================
+Most of low perplexity score sentences do not make much sense. 
+And what is interesting is that all 5 models have been able to pick out some of these pecularities. 
+
+Especially the sentences picked out by jelink-mercer and kneser-ney are almost similar. 
+Some interesting sentences are as follows:
+('iras .')
+('@')
+('hiroshi asada')
+('fundamentalists jihad')
+("there was n't *?* . ''")
+("the '82 salon is $ 115 *u* .")
+("there was n't *?* . ''")
+('they mature 1992-1999 , 2009 and 2017 .')
